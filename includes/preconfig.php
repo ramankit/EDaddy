@@ -8,6 +8,8 @@
     $jsplugins=$base_dir.'/bootstrap/js/bootstrap.min.js';
     $flat_ui=$base_dir.'/bootstrap/css/flat-ui.css';
     $yamm=$base_dir.'/bootstrap/yamm/yamm.css';
+    $dpcss=$base_dir.'/dp/css/datepicker3.css';
+    $dpjs=$base_dir.'/dp/js/bootstrap-datepicker.js';
 
     echo '<link rel="stylesheet" href="'.$bootstrap_path.'" >';
     echo "\n\t";
@@ -18,10 +20,16 @@
     echo '<link rel="stylesheet" href="'.$yamm.'" >';
     echo "\n\t";
 
+    echo '<link rel="stylesheet" href="'.$dpcss.'" >';
+    echo "\n\t";
+
     echo '<script src="'.$jquery_path.'"></script>';
     echo "\n\t";
 
     echo '<script src="'.$jsplugins.'"></script>';
     echo "\n\t";
+
+echo '<script src="'.$dpjs.'"></script>';
+echo "\n\t";
 
 ?>
