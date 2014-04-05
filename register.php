@@ -11,6 +11,7 @@
 <div class="container">
 <?php
     include('includes/menu.php');
+    include('includes/uregister.php');
 ?>
 </body>
 <?php

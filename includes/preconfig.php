@@ -12,8 +12,8 @@
     echo '<link rel="stylesheet" href="'.$bootstrap_path.'" >';
     echo "\n\t";
 
-    echo '<link rel="stylesheet" href="'.$flat_ui.'" >';
-    echo "\n\t";
+  //  echo '<link rel="stylesheet" href="'.$flat_ui.'" >';
+   // echo "\n\t";
 
     echo '<link rel="stylesheet" href="'.$yamm.'" >';
     echo "\n\t";
