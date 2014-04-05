@@ -1,0 +1,134 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="visio.css"/>
+<title>
+0TH LEVEL
+</title>
+<script type="text/javascript" language="javascript">
+function UpdateTooltip(){};
+function OnShapeClick(){};
+</script>
+
+<script src="gif_1.js" type="text/jscript" language="jscript"></script>
+
+<script type="text/jscript" language="jscript">
+	if(parent.isUpLevel)
+	{
+		location.replace(parent.g_FileList[parent.g_CurPageIndex].PriImage);
+	}
+</script>
+
+
+
+<script type="text/jscript" language="jscript">
+
+var pageID = 0;
+
+var isUpLevel = parent.isUpLevel;
+var OnShapeClick = null;
+if (!parent.isMac)
+{
+	OnShapeClick = parent.OnShapeClick;
+}
+
+var OnShapeKey = parent.OnShapeKey;
+var UpdateTooltip = parent.UpdateTooltip;
+var clickMenu = parent.clickMenu;
+var toggleMenuDiv = parent.toggleMenuDiv;
+var toggleMenuLink = parent.toggleMenuLink;
+var GoToPage = parent.GoToPage;
+
+
+if (parent.isUpLevel)
+{
+
+	if (parent.g_FirstPageToLoad != null && parent.g_FirstPageToLoad.length > 0)
+	{
+		if (parent.g_FileList[parent.g_CurPageIndex].PageID != pageID)
+		{
+			var fileEntry = parent.g_FileList[parent.g_CurPageIndex];
+			var fileToLoad = fileToLoad = fileEntry.PriImage;
+			if (fileEntry.SecImage.length > 0)
+			{
+				fileToLoad = fileEntry.SecImage;
+			}
+
+			location.replace(fileToLoad);
+		}
+
+		parent.g_FirstPageToLoad = null;
+	}
+
+
+	var viewMgr = new parent.CViewMgr();
+	parent.viewMgr = viewMgr;
+
+	viewMgr.SupportsDetails = true;
+	viewMgr.SupportsSearch = true;
+
+	viewMgr.put_Location = ViewMgrSetRasterLocation;
+	viewMgr.visBBoxLeft = 0.195184;
+	viewMgr.visBBoxRight = 11.418990;
+	viewMgr.visBBoxBottom = 0.214869;
+	viewMgr.visBBoxTop = 7.860617;
+	viewMgr.highlightDiv = null;
+}
+
+function load ()
+{
+	if(isUpLevel)
+	{
+		arrowdiv.innerHTML = '<img id="arrowgif" alt="Shows the location of the selected shape" src="arrow.gif"/>';
+
+		var pageIndex = parent.PageIndexFromID (pageID);
+		parent.CurPageUpdate (pageIndex);
+	}
+}
+
+function unload()
+{
+	if(isUpLevel)
+	{
+		viewMgr = null;
+		parent.viewMgr = null;
+	}
+}
+
+window.onload = load;
+window.onunload = unload;
+document.onclick = clickMenu;
+
+</script>
+</head>
+
+<body class="pageView" bgcolor="#FFFFFF">
+
+<div id=arrowdiv style="position:absolute;top:0;left:0;visibility:hidden;z-index:5">
+</div>
+
+<div id="menu1" onclick="clickMenu()" class="hlMenu">
+</div>
+
+<DIV id=RasterDiv>
+
+
+<center>
+  <IMG id="ConvertedImage" SRC="gif_1.gif" ALT="Page-1" name=RasterImage BORDER="0" USEMAP="#visImageMap">
+</center>
+
+<MAP NAME="visImageMap">
+  <AREA shape="POLYGON" tabindex="1" ALT="VISITOR" origTitle="VISITOR" TITLE="VISITOR"  target="_top" COORDS="0,544,154,544,154,461,0,461,0,544" onmouseover="UpdateTooltip(this,0,5)" onfocus="UpdateTooltip(this,0,5)" onclick="return OnShapeClick(0,5);" onkeyup="OnShapeKey(0,5);">
+  <AREA shape="POLYGON" tabindex="1" ALT="BUYER" origTitle="BUYER" TITLE="BUYER"  target="_top" COORDS="646,544,800,544,800,461,646,461,646,544" onmouseover="UpdateTooltip(this,0,4)" onfocus="UpdateTooltip(this,0,4)" onclick="return OnShapeClick(0,4);" onkeyup="OnShapeKey(0,4);">
+  <AREA shape="POLYGON" tabindex="1" ALT="SELLER" origTitle="SELLER" TITLE="SELLER"  target="_top" COORDS="646,166,800,166,800,83,646,83,646,166" onmouseover="UpdateTooltip(this,0,3)" onfocus="UpdateTooltip(this,0,3)" onclick="return OnShapeClick(0,3);" onkeyup="OnShapeKey(0,3);">
+  <AREA shape="POLYGON" tabindex="1" ALT="ADMIN" origTitle="ADMIN" TITLE="ADMIN"  target="_top" COORDS="0,166,154,166,154,83,0,83,0,166" onmouseover="UpdateTooltip(this,0,2)" onfocus="UpdateTooltip(this,0,2)" onclick="return OnShapeClick(0,2);" onkeyup="OnShapeKey(0,2);">
+  <AREA shape="POLYGON" tabindex="1" ALT="ONLINE SHOPPING SYSTEM" origTitle="ONLINE SHOPPING SYSTEM" TITLE="ONLINE SHOPPING SYSTEM"  target="_top" COORDS="309,293,309,294,309,296,309,297,309,298,309,300,309,301,309,302,309,303,309,305,310,306,310,307,310,309,310,310,310,311,311,312,311,314,311,315,312,316,312,317,312,319,313,320,313,321,313,322,314,324,314,325,314,326,315,327,315,328,316,330,316,331,317,332,317,333,318,334,318,336,319,337,320,338,320,339,321,340,321,341,322,342,323,343,323,345,324,346,325,347,325,348,326,349,327,350,328,351,328,352,329,353,330,354,331,355,332,356,333,357,333,358,334,359,335,360,336,361,337,362,338,363,339,364,340,365,341,365,342,366,343,367,343,368,344,369,345,370,347,370,348,371,349,372,350,373,351,373,352,374,353,375,354,376,355,376,356,377,357,378,358,378,359,379,361,380,362,380,363,381,364,381,365,382,366,382,368,383,369,383,370,384,371,384,372,385,373,385,375,386,376,386,377,387,378,387,380,387,381,388,382,388,383,388,385,389,386,389,387,389,388,389,390,390,391,390,392,390,394,390,395,390,396,391,397,391,399,391,400,391,401,391,402,391,404,391,405,391,406,391,408,391,409,391,410,391,412,391,413,391,414,391,415,391,417,391,418,391,419,390,421,390,422,390,423,390,424,390,426,389,427,389,428,389,429,389,431,388,432,388,433,388,434,387,436,387,437,387,438,386,439,386,441,385,442,385,443,384,444,384,445,383,447,383,448,382,449,382,450,381,451,381,452,380,453,380,455,379,456,378,457,378,458,377,459,376,460,376,461,375,462,374,463,373,464,373,465,372,467,371,468,370,469,370,470,369,471,368,472,367,472,366,473,365,474,365,475,364,476,363,477,362,478,361,479,360,480,359,481,358,482,357,482,356,483,355,484,354,485,353,486,352,486,351,487,350,488,349,489,348,489,347,490,346,491,345,491,343,492,342,493,341,493,340,494,339,494,338,495,337,496,336,496,334,497,333,497,332,498,331,498,330,499,328,499,327,500,326,500,325,500,324,501,322,501,321,502,320,502,319,502,317,502,316,503,315,503,314,503,312,504,311,504,310,504,309,504,307,504,306,505,305,505,303,505,302,505,301,505,300,505,298,505,297,505,296,505,294,505,293,505,292,505,291,505,289,505,288,505,287,505,285,505,284,505,283,505,282,504,280,504,279,504,278,504,277,504,275,503,274,503,273,503,271,502,270,502,269,502,268,502,266,501,265,501,264,500,263,500,262,500,260,499,259,499,258,498,257,498,256,497,254,497,253,496,252,496,251,495,250,494,248,494,247,493,246,493,245,492,244,491,243,491,242,490,241,489,240,489,239,488,237,487,236,486,235,486,234,485,233,484,232,483,231,482,230,482,229,481,228,480,227,479,226,478,225,477,225,476,224,475,223,474,222,473,221,472,220,472,219,471,218,470,218,469,217,468,216,467,215,465,214,464,214,463,213,462,212,461,211,460,211,459,210,458,209,457,209,456,208,455,207,453,207,452,206,451,206,450,205,449,204,448,204,447,203,445,203,444,202,443,202,442,201,441,201,439,201,438,200,437,200,436,199,434,199,433,199,432,198,431,198,429,198,428,197,427,197,426,197,424,197,423,196,422,196,421,196,419,196,418,196,417,196,415,195,414,195,413,195,412,195,410,195,409,195,408,195,406,195,405,195,404,195,402,195,401,195,400,195,399,195,397,196,396,196,395,196,394,196,392,196,391,196,390,197,388,197,387,197,386,197,385,198,383,198,382,198,381,199,380,199,378,199,377,200,376,200,375,201,373,201,372,201,371,202,370,202,369,203,368,203,366,204,365,204,364,205,363,206,362,206,361,207,359,207,358,208,357,209,356,209,355,210,354,211,353,211,352,212,351,213,350,214,349,214,348,215,347,216,345,217,344,218,343,218,343,219,342,220,341,221,340,222,339,223,338,224,337,225,336,225,335,226,334,227,333,228,333,229,332,230,331,231,330,232,329,233,328,234,328,235,327,236,326,237,325,239,325,240,324,241,323,242,323,243,322,244,321,245,321,246,320,247,320,248,319,250,318,251,318,252,317,253,317,254,316,256,316,257,315,258,315,259,314,260,314,262,314,263,313,264,313,265,313,266,312,268,312,269,312,270,311,271,311,273,311,274,310,275,310,277,310,278,310,279,310,280,309,282,309,283,309,284,309,285,309,287,309,288,309,289,309,291,309,292,309,293" onmouseover="UpdateTooltip(this,0,1)" onfocus="UpdateTooltip(this,0,1)" onclick="return OnShapeClick(0,1);" onkeyup="OnShapeKey(0,1);">
+</MAP>
+
+
+
+</DIV>
+
+</body>
+</html>
+

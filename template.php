@@ -11,7 +11,8 @@
 <div class="container">
 <?php
     include('includes/menu.php');
- ?>
+?>
+</div>
 </body>
 <?php
 include('includes/tracker.js');
